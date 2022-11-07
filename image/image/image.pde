@@ -1,24 +1,23 @@
-//Background Image Example
-//Reivew issues of overlapping colour and opacity
-//
 //Global Variables
 int appWidth, appHeight;
-float imageBackgroundX, imageBackgroundY, imageBackgroundWidth, imageBackgroundHeight;
+float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
 PImage pic;
 //
-size(500, 100); //Landscape
-//Copy Display Orientation
+size(800, 600); //Landscape
+//Copy Display Algorithm
 appWidth = width;
 appHeight = height;
 //
 //Population
-pic = loadImage("../Images Used/img_the_scream.jpg");
-imageBackgroundX = appWidth*0;
-imageBackgroundY = appHeight*0;
-imageBackgroundWidth = appWidth-1;
-imageBackgroundHeight = appHeight-1;
+pic = loadImage("../Images Used/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
+backgroundImageX = appWidth*0;
+backgroundImageY = appHeight*0;
+backgroundImageWidth = appWidth-1;
+backgroundImageHeight = appHeight-1;
 //
-//Rectangle Layout and Image drawing to CANVAS
-rect( imageBackgroundX, imageBackgroundY, imageBackgroundWidth, imageBackgroundHeight);
+//Rectangular Layout and Image Drawing to CANVAS
+rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 //
-image( pic, imageBackgroundX, imageBackgroundY, imageBackgroundWidth, imageBackgroundHeight);
+tint(255, 0); //Gray Scale: use 1/2 tint value for white (i.e. 128/256=1/2)
+//tint(64, 64, 40); //RGB: Night Mode
+image( pic, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
