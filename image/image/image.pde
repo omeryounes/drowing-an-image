@@ -38,18 +38,27 @@ void setup()
     picWidthAdjusted = appWidth;
     //
     if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
-    if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
     //
-    if ( appHeight >= picHeightAdjusted ) {
-      picHeightAdjusted = picHeight;
+    if ( appHeight >= picHeight ) {
       if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
-      if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
+      picHeightAdjusted = picWidthAdjusted * imageHeightRatio;
+      if (appHeight < picHeightAdjusted ) {
+        println("STOP: image is too big for CANVAS");
+        exit(); //stops any further use of APP
+        //Remember: goal is 1:1 aspect ratio
+      }
     } else {
       //Image smaller than CANVAS needs separate algorithm
     }
   } else {
     //Image smaller than CANVAS needs separate algorithm
   }
+  //
+  //Verifying Variable Values after algoroithm
+  println("App Width:", appWidth, " and App Height:", appHeight);
+  println("Larger Image dimension is:", largerDimension);
+  println("Image dimensions are:", picWidth, picHeight);
+  println("Adjusted Image dimesnions are (stretch is goal):", picWidthAdjusted, picHeightAdjusted);
   //
 }//End setup
 //
@@ -62,10 +71,7 @@ void mousePressed() {
 //
 
 
-println(appWidth, imageWidthRatio);
-println(appHeight, imageHeightRatio);
-picWidthAdjusted = appWidth * imageWidthRatio;
-picHeightAdjusted = appWidth * imageHeightRatio;
+
 //Developer verified variables
 println (appWidth, picWidth, picWidthAdjusted);
 println (appHeight, picHeight, picHeightAdjusted);
