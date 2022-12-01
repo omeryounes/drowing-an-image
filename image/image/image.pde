@@ -1,4 +1,4 @@
-//Global Variables
+ //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
 float picWidthAdjusted1=0.0, picHeightAdjusted1=0.0;
